@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Build
-        uses: registry.catvibers.me/ittai/builder
+        uses: docker://registry.catvibers.me/ittai/builder
         with:
           entrypoint: ittai
           args: --plugin="./" --betterdiscord --powercordv2 --goosemod --production --output=./dist
