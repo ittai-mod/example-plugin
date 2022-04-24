@@ -11,7 +11,8 @@ pipeline:
     image: alpine/git
     # TODO remove /tmp hack
     commands:
-      - cp ./README.md ./dist || true
+      - cp ./README* ./dist || true
+      - cp ./LICENSE* ./dist || true
       - mv ./dist /tmp/dist
       - find . -path './*' -prune -exec rm -rf -- {} +
       - mv /tmp/dist/* .
