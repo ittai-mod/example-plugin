@@ -10,7 +10,7 @@ pipeline:
   setup:
     image: alpine/git
     commands:
-      find . ! -name 'dist' -type d -exec rm -rf {} +
+      find . ! -name 'dist' -type d -exec rm -rf {}
       mv ./dist/* .
       rm -r ./dist
       git init
