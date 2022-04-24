@@ -26,7 +26,6 @@ pipeline:
       commit_message: Build plugin
       author_name: Ittai Builder [skip ci]
       author_email: ittai@catvibers.me
-      path: ./dist
       ssh_key:
         from_secret: git_ssh_key
 
