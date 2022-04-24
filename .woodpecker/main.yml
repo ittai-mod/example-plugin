@@ -21,7 +21,7 @@ pipeline:
     settings:
       branch: build-gitea
       remote: git@git.catvibers.me:ittai/example-plugin.git
-      force: false
+      force: true
       commit: true
       commit_message: Build plugin
       author_name: ittaibot
