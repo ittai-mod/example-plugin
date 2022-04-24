@@ -1,0 +1,8 @@
+pipeline:
+  build:
+    image: registry.catvibers.me/ittai/builder
+    commands:
+      - pnpm i
+      - ittai --plugin="./" --betterdiscord --powercordv2 --goosemod --production --output=./dist
+    when:
+      event: [ push ]
