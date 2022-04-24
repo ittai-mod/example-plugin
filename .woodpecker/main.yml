@@ -10,10 +10,12 @@ pipeline:
   setup:
     image: alpine/git
     commands:
+      - shopt -s dotglob
       - mv ./dist /tmp/dist
       - rm -rf ./*
       - mv /tmp/dist/* .
       - git init
+      - shopt -u dotglob
 
   push:
     image: appleboy/drone-git-push
