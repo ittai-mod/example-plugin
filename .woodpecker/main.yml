@@ -6,3 +6,17 @@ pipeline:
       - ittai --plugin="./" --betterdiscord --powercordv2 --goosemod --production --output=./dist
     when:
       event: [ push ]
+
+  push:
+    image: appleboy/drone-git-push
+    settings:
+      branch: build-gitea
+      remote: git@git.catvibers.me:ittai/example-plugin.git
+      force: false
+      commit: true
+      commit_message: Build plugin
+      author_name: Ittai Builder [skip ci]
+      author_email: ittai@catvibers.me
+      path: ./dist
+      ssh_key:
+        from_secret: git_ssh_key
