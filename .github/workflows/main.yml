@@ -7,8 +7,8 @@ jobs:
       - name: Build
         uses: docker://registry.catvibers.me/ittai/builder
         with:
-          entrypoint: ittai
-          args: --plugin="./" --betterdiscord --powercordv2 --goosemod --production --output=./dist
+          entrypoint: sh
+          args: -c "pnpm i && ittai --plugin="./" --betterdiscord --powercordv2 --goosemod --production --output=./dist"
 
       - name: Prepare to push
         run: |
