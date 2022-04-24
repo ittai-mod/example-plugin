@@ -1,0 +1,26 @@
+name: Build Plugin
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build
+        uses: registry.catvibers.me/ittai/builder
+        with:
+          entrypoint: ittai
+          args: --plugin="./" --betterdiscord --powercordv2 --goosemod --production --output=./dist
+
+      - name: Prepare to push
+        run: |
+          mv ./dist /tmp/dist
+          rm -rf ./{*,.*}
+          mv /tmp/dist/{*,.*} .
+          git init
+          git config --local user.email "ittai@catvibers.me"
+          git config --local user.name "ittaibot"
+          git commit -m "Build plugin" -a
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: build-github
