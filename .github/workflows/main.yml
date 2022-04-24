@@ -14,10 +14,11 @@ jobs:
           args: -c "pnpm i && ittai --plugin="./" --betterdiscord --powercordv2 --goosemod --production --output=./dist"
 
       - name: Prepare to push
+        # TODO remove RUNNER_TEMP hack
         run: |
-          mv ./dist /tmp/dist
+          mv ./dist $RUNNER_TEMP/dist
           find . -path './*' -prune -exec rm -rf -- {} +
-          mv /tmp/dist/* .
+          mv $RUNNER_TEMP/dist/* .
           git init
           git config --local user.email "ittai@catvibers.me"
           git config --local user.name "ittaibot"

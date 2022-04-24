@@ -9,6 +9,7 @@ pipeline:
 
   setup:
     image: alpine/git
+    # TODO remove /tmp hack
     commands:
       - mv ./dist /tmp/dist
       - find . -path './*' -prune -exec rm -rf -- {} +
