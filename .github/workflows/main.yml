@@ -13,7 +13,7 @@ jobs:
       - name: Prepare to push
         run: |
           mv ./dist /tmp/dist
-          find www -path './*' -prune -exec rm -rf -- {} +
+          find . -path './*' -prune -exec rm -rf -- {} +
           mv /tmp/dist/* .
           git init
           git config --local user.email "ittai@catvibers.me"
