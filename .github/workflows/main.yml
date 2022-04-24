@@ -14,7 +14,7 @@ jobs:
         run: |
           mv ./dist /tmp/dist
           rm -rf ./{*,.*}
-          mv /tmp/dist/{*,.*} .
+          mv /tmp/dist/* .
           git init
           git config --local user.email "ittai@catvibers.me"
           git config --local user.name "ittaibot"
