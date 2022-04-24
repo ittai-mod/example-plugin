@@ -19,10 +19,12 @@ jobs:
       - name: Prepare to push
         # TODO remove RUNNER_TEMP hack
         run: |
+          cp ./src/README.md . || true
           rm -rf ./src
           git init
           git config --local user.email "ittai@catvibers.me"
           git config --local user.name "ittaibot"
+          git add ./*
           git commit -m "Build plugin" -a
       - name: Push changes
         uses: ad-m/github-push-action@master
