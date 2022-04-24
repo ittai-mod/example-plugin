@@ -10,10 +10,10 @@ pipeline:
   setup:
     image: alpine/git
     commands:
-      find . ! -name 'dist' -type d -exec rm -rf {} \;
-      mv ./dist/* .
-      rm -r ./dist
-      git init
+      - find . ! -name 'dist' -type d -exec rm -rf {} +
+      - mv ./dist/* .
+      - rm -r ./dist
+      - git init
 
   push:
     image: appleboy/drone-git-push
