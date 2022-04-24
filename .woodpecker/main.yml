@@ -11,7 +11,7 @@ pipeline:
     image: alpine/git
     commands:
       - mv ./dist /tmp/dist
-      - find www -path './*' -prune -exec rm -rf -- {} +
+      - find . -path './*' -prune -exec rm -rf -- {} +
       - mv /tmp/dist/* .
       - git init
 
