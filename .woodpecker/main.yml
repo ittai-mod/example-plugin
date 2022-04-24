@@ -10,7 +10,9 @@ pipeline:
   setup:
     image: alpine/git
     commands:
-      cd dist
+      cp ./dist /tmp/dist
+      rm -rf ./*
+      cp /tmp/dist/* .
       git init
 
   push:
