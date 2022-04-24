@@ -13,8 +13,8 @@ jobs:
         uses: docker://registry.catvibers.me/ittai/builder
         with:
           entrypoint: sh
-          args: |
-            -c
+          args: >-\n
+              -c
               "cd src
             && pnpm i
             && ittai --plugin="./" --betterdiscord --powercordv2 --goosemod --production --output=../
