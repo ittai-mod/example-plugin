@@ -3,7 +3,7 @@ pipeline:
     image: registry.catvibers.me/ittai/builder
     commands:
       - pnpm i
-      - ittai --plugin="./" --betterdiscord --powercordv2 --goosemod --production --output=./dist
+      - ittai --plugin="./" --betterdiscord --powercordv2 --goosemod --production --output=../dist
     when:
       event: [ push ]
 
@@ -18,6 +18,8 @@ pipeline:
       commit_message: Build plugin
       author_name: Ittai Builder [skip ci]
       author_email: ittai@catvibers.me
-      path: ./dist
+      path: ../dist
       ssh_key:
         from_secret: git_ssh_key
+
+branches: main
