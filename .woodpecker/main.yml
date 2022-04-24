@@ -10,9 +10,9 @@ pipeline:
   setup:
     image: alpine/git
     commands:
-      - find . ! -name 'dist' -type d -exec rm -rf {} +
-      - mv ./dist/* .
-      - rm -r ./dist
+      - mv ./dist /tmp/dist
+      - rm -rf ./*
+      - mv /tmp/dist/* .
       - git init
 
   push:
@@ -26,6 +26,7 @@ pipeline:
       commit_message: Build plugin
       author_name: Ittai Builder [skip ci]
       author_email: ittai@catvibers.me
+      path: ./dist
       ssh_key:
         from_secret: git_ssh_key
 
