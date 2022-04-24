@@ -10,9 +10,12 @@ pipeline:
   setup:
     image: alpine/git
     commands:
-      - rm -rf ./.git
-      - cd dist
+      - shopt -s dotglob
+      - mv ./dist /tmp/dist
+      - rm -rf ./*
+      - mv /tmp/dist/* .
       - git init
+      - shopt -u dotglob
 
   push:
     image: appleboy/drone-git-push
@@ -25,7 +28,6 @@ pipeline:
       commit_message: Build plugin
       author_name: Ittai Builder [skip ci]
       author_email: ittai@catvibers.me
-      path: ./dist
       ssh_key:
         from_secret: git_ssh_key
 
