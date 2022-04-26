@@ -17,6 +17,8 @@ pipeline:
       - find . -path './*' -prune -exec rm -rf -- {} +
       - mv /tmp/dist/* .
       - git init
+    when:
+      event: [ push ]
 
   push:
     image: appleboy/drone-git-push
@@ -31,5 +33,7 @@ pipeline:
       author_email: ittai@catvibers.me
       ssh_key:
         from_secret: git_ssh_key
+    when:
+      event: [ push ]
 
 branches: main
