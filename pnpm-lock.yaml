@@ -2,11 +2,11 @@ lockfileVersion: 5.4
 
 specifiers:
   '@types/react': ^18.0.6
-  ittai: ^1.0.4
+  ittai: ^1.0.5
 
 dependencies:
   '@types/react': 18.0.6
-  ittai: 1.0.4
+  ittai: 1.0.5
 
 packages:
 
@@ -52,8 +52,8 @@ packages:
     resolution: {integrity: sha512-uX1KG+x9h5hIJsaKR9xHUeUraxf8IODOwq9JLNPq6BwB04a/xgpq3rcx47l5BZu5zBPlgD342tdke3Hom/nJRA==}
     dev: false
 
-  /ittai/1.0.4:
-    resolution: {integrity: sha512-t3n/pNnqppUEbG5Ul2XPpVbsSJ4FiBGb/SJNuD+gaG79O3uqmM+D0sj94D1ttX+wp5CjqxqgkSSnKHX9ENTrHw==}
+  /ittai/1.0.5:
+    resolution: {integrity: sha512-Zrx4+3ZKtUHohhP1n0rhriXEq8D6tuJWV0NshBv6kECwj0d7rg3ZjW983pp01f0jEVrhU9gj9l35qmVoxAzCYg==}
     dependencies:
       '@react-spring/types': 9.4.5
       '@types/react': 17.0.47
