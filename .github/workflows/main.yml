@@ -13,7 +13,7 @@ jobs:
         uses: docker://registry.catvibers.me/ittai/builder
         with:
           entrypoint: sh
-          args: -c "cd src && pnpm i && ittai --plugin="./" --betterdiscord=./dist --powercordv2=./dist --goosemod=./dist/goosemod --production && rm -rf ./node_modules"
+          args: -c "cd src && pnpm i && ittai --plugin="./" --betterdiscord=../dist --powercordv2=../dist --goosemod=../dist/goosemod --production && rm -rf ./node_modules"
           # rm is a hack to make github actions permissions function
 
       - name: Prepare to push
