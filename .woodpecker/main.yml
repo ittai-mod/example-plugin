@@ -1,6 +1,7 @@
 pipeline:
   build:
     image: registry.catvibers.me/ittai/builder
+    pull: true
     commands:
       - pnpm i
       - ittai --plugin="./" --betterdiscord=./dist --powercordv2=./dist --goosemod=./dist/goosemod --production
@@ -9,6 +10,7 @@ pipeline:
 
   setup:
     image: alpine/git
+    pull: true
     # TODO remove /tmp hack
     commands:
       - cp ./README* ./dist || true
@@ -22,6 +24,7 @@ pipeline:
 
   push:
     image: appleboy/drone-git-push
+    pull: true
     secrets: [git_ssh_key]
     settings:
       branch: build-gitea
