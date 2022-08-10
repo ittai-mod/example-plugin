@@ -14,7 +14,7 @@
   "license": "CC0-1.0",
   "dependencies": {
     "@types/react": "^18.0.6",
-    "ittai": "^1.0.5",
+    "ittai": "^2.0.6",
     "tslib": "^2.4.0"
   }
 }

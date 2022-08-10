@@ -3,7 +3,7 @@ pipeline:
     image: registry.catvibers.me/ittai/builder
     commands:
       - pnpm i
-      - ittai --plugin="./" --betterdiscord --powercordv2 --goosemod --production --output=./dist
+      - ittai --plugin="./" --betterdiscord=./dist --powercordv2=./dist --goosemod=./dist/goosemod --production
     when:
       event: [ push ]
 

@@ -2,12 +2,12 @@ lockfileVersion: 5.4
 
 specifiers:
   '@types/react': ^18.0.6
-  ittai: ^1.0.5
+  ittai: ^2.0.6
   tslib: ^2.4.0
 
 dependencies:
   '@types/react': 18.0.6
-  ittai: link:../ittai/core
+  ittai: 2.0.6
   tslib: 2.4.0
 
 packages:
@@ -30,6 +30,10 @@ packages:
 
   /csstype/3.0.11:
     resolution: {integrity: sha512-sa6P2wJ+CAbgyy4KFssIb/JNMLxFvKF1pCYCSXS8ZMuqZnMsrxqI2E5sPyoTpxoPU/gVZMzr2zjOfg8GIZOMsw==}
+    dev: false
+
+  /ittai/2.0.6:
+    resolution: {integrity: sha512-IZHPwq9vrBv0pPtnFEtrd59r8iwE0QbnD01Gjv1IcHvTg3bFnSXPvOGI8n5ldXoOF4+uDPHI9bM07iasGnKftg==}
     dev: false
 
   /tslib/2.4.0:
