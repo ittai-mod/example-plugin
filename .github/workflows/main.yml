@@ -19,7 +19,7 @@ jobs:
       - name: Prepare to push
         run: |
           sudo chown -R runner:runner ./
-          mv -r ./dist/* .
+          mv ./dist/* .
           rm -r ./dist
           cp ./src/README* . || true
           cp ./src/LICENSE* . || true
