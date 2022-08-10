@@ -17,9 +17,9 @@ jobs:
           # rm is a hack to make github actions permissions function
 
       - name: Prepare to push
-        # TODO remove RUNNER_TEMP hack
         run: |
           sudo chown -R runner:runner ./
+          cp ./dist/* .
           cp ./src/README* . || true
           cp ./src/LICENSE* . || true
           rm -rf ./src
